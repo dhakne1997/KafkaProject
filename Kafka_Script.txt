@@ -1,0 +1,29 @@
+
+-----------------------------------------------------------Windows kafka Setup---------------------------------------------------------------
+1).\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+2).\bin\windows\kafka-server-start.bat .\config\server.properties
+
+3)kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --topic kafkatest   ----->topic create ----------------console proucer
+
+
+bin\windows\kafka-console-consumer.bat --topic myfirsttopic --bootstrap-server localhost:9092 --group myspecificgroup     -----------------group mapping
+
+
+
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic kafkatest --group kafkagroup
+
+
+4)kafka-console-producer.bat --broker-list localhost:9092 --topic kafkatest   ----------------console proucer
+
+5)kafka-console-consumer.bat --topic kafkatest --bootstrap-server localhost:9092 --from-beginning  -------------------consumerconsole
+
+6)Sample Data:   ------------------------------------------->producer console
+
+{"Name: "balaji", "Age":"31", "Gender":"Male"} 
+{"Name: "balu", "Age":"27", "Gender":"Male"}
+{"Name: "bala", "Age":"17", "Gender":"Male"}
+
+
+
+kafka-topics.bat --list --bootstrap-server localhost:9092   ---------------------------topic list check
